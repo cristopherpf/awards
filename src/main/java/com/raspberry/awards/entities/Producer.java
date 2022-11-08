@@ -1,5 +1,6 @@
 package com.raspberry.awards.entities;
 
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -62,5 +63,22 @@ public class Producer {
 	@Override
 	public String toString() {
 		return "Producer [id=" + id + ", name=" + name + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Producer other = (Producer) obj;
+		return Objects.equals(id, other.id) && Objects.equals(name, other.name);
 	}
 }

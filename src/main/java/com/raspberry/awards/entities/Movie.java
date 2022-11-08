@@ -1,6 +1,7 @@
 package com.raspberry.awards.entities;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -105,5 +106,23 @@ public class Movie {
 	public String toString() {
 		return "Movie [id=" + id + ", title=" + title + ", movieYear=" + movieYear + ", studios=" + studios + ", producers="
 				+ producers + ", winner=" + winner + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, movieYear, title, winner);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Movie other = (Movie) obj;
+		return Objects.equals(id, other.id) && Objects.equals(movieYear, other.movieYear)
+				&& Objects.equals(title, other.title) && Objects.equals(winner, other.winner);
 	}
 }
