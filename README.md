@@ -1,0 +1,1 @@
+# API RESTful para consulta de melhores e piores vencedores da categoria Pior Filme do Golden Raspberry Awards.
