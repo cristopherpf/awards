@@ -2,9 +2,9 @@
 
 ----
 
-# Executar a aplicação após instalar as dependências do projeto:
+# Executar a aplicação
 
-No diretóro raiz executar:
+Após instalar as dependências do projeto, executar no diretóro raiz:
 <br>
 ```mvn spring-boot:run```
 
@@ -20,7 +20,7 @@ http://localhost:8080/swagger-ui.html
 
 Executar, na raiz da aplicação:
 <br>
-```mvn test</b>```
+```mvn test```
 
 ----
 
