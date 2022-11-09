@@ -1,7 +1,5 @@
 # Golden Raspberry Awards - API
 
-----
-
 ## Executar a aplicação
 
 Após instalar as dependências do projeto, executar no diretóro raiz:
@@ -14,15 +12,11 @@ Após subir a aplicação o swagger com a especificação dos endpoints pode ser
 <br>
 http://localhost:8080/swagger-ui.html
 
-----
-
 ## Executando os testes
 
-Executar, na raiz da aplicação:
+Executar no diretório raiz da aplicação:
 <br>
 ```mvn test```
-
-----
 
 ## Requisitos da API
 
