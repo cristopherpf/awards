@@ -27,7 +27,7 @@ public class ProducerController {
 	
 	@GetMapping
 	public ResponseEntity<List<Producer>> findAll() {
-		return new ResponseEntity<List<Producer>>(service.findAll(), HttpStatus.CREATED);
+		return new ResponseEntity<List<Producer>>(service.findAll(), HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/{id}")

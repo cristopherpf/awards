@@ -26,7 +26,7 @@ public class StudioController {
 	
 	@GetMapping
 	public ResponseEntity<List<Studio>> findAll() {
-		return new ResponseEntity<List<Studio>>(service.findAll(), HttpStatus.CREATED);
+		return new ResponseEntity<List<Studio>>(service.findAll(), HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/{id}")

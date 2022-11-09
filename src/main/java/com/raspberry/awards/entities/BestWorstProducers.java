@@ -1,11 +1,12 @@
 package com.raspberry.awards.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BestWorstProducers {
 
-	private List<ProducerAwards> min;
-	private List<ProducerAwards> max;
+	private List<ProducerAwards> min = new ArrayList<>();
+	private List<ProducerAwards> max = new ArrayList<>();
 	
 	public BestWorstProducers() {}
 	

@@ -26,7 +26,7 @@ public class MovieController {
 	
 	@GetMapping
 	public ResponseEntity<List<Movie>> findAll() {
-		return new ResponseEntity<List<Movie>>(service.findAll(), HttpStatus.CREATED);
+		return new ResponseEntity<List<Movie>>(service.findAll(), HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/{id}")

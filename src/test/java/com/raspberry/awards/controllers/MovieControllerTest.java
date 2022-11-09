@@ -8,6 +8,8 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.hamcrest.Matchers;
@@ -91,6 +93,22 @@ public class MovieControllerTest {
 		 .andExpect(jsonPath("$.title", Matchers.is(movie.getTitle())))
 		 .andExpect(jsonPath("$.movieYear", Matchers.is(movie.getMovieYear())))
 		 .andExpect(jsonPath("$.winner", Matchers.is(movie.getWinner())));
+	}
+	
+	@Test
+	public void shouldFindAllMovies() throws Exception {
+		List<Movie> movies = new ArrayList<>();
+		movies.add(createMovie());
+		
+		when(service.findAll()).thenReturn(movies);
+		
+		mvc.perform(
+		    MockMvcRequestBuilders.get("/movies")
+			.accept(MediaType.APPLICATION_JSON)
+        ).andExpect(status().isOk())
+		.andExpect(jsonPath("$.[0].title", Matchers.is(movies.get(0).getTitle())))
+		.andExpect(jsonPath("$.[0].movieYear", Matchers.is(movies.get(0).getMovieYear())))
+		.andExpect(jsonPath("$.[0].winner", Matchers.is(movies.get(0).getWinner())));
 	}
 	
 }
